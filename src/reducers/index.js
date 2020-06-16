@@ -5,6 +5,9 @@ const reducer = (state, action) => {
         
         case 'UNSET_FAVOURITES':
             return{...state, myList: state.myList.filter( item => item.id !== action.payload)}
+        
+        case 'SET_NEW_USER':
+            return {...state, user: action.payload}
     
         default:
             return state;
