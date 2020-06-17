@@ -12,8 +12,7 @@ import twitterIcon from '../assets/static/twitter-icon.png';
 const Login = (props) => {
 
     const [loginForm, setLoginForm] = useState({
-        email : '',
-        password : ''
+        email : ''
     });
 
     const handleChange = e => {
@@ -25,7 +24,7 @@ const Login = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        loginRequest(loginForm)
+        props.loginRequest(loginForm)
         props.history.push('/')
     }
 
@@ -59,8 +58,8 @@ const Login = (props) => {
     );
 };
 
-const mapDispatchToProps = () => {
+const mapDispatchToProps = {
     loginRequest
 };
 
-export default connect(null, loginRequest)(Login);
+export default connect(null, mapDispatchToProps)(Login);

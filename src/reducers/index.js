@@ -8,6 +8,12 @@ const reducer = (state, action) => {
         
         case 'SET_NEW_USER':
             return {...state, user: action.payload}
+        
+        case 'LOGOUT_REQUEST':
+            return {...state, user : action.payload}
+        
+        case 'REGISTER_REQUEST':
+            return {...state, user: action.payload}
     
         default:
             return state;
